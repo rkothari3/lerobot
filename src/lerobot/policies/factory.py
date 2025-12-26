@@ -121,8 +121,10 @@ def get_policy_class(name: str) -> type[PreTrainedPolicy]:
         return XVLAPolicy
     elif name == "wall_x":
         from lerobot.policies.wall_x.modeling_wall_x import WallXPolicy
-
         return WallXPolicy
+    elif name == "bc":
+        from lerobot_policy_bc import BC
+        return BC
     else:
         try:
             return _get_policy_cls_from_policy_name(name=name)
